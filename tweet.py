@@ -37,6 +37,7 @@ def get_search(keyword, tweet_fields="text,created_at,geo", media_fields="url,pr
         "tweet.fields": tweet_fields,
         "expansions": "attachments.media_keys",
         "media.fields": media_fields,
+        "place.fields": "full_name,geo",
     }
     json_response = connect_to_endpoint(search_url, query_params)
     open("result.json", "w").write(json.dumps(json_response, indent=4, sort_keys=True))
