@@ -1,11 +1,12 @@
 {
+    "푸시 알림 내용": "여의도에 홍수가 발생했습니다. 안전에 유의하세요",
     "혼잡도정보": {
         "area_nm": "여의도",
         "live_ppltn_stts": null,
         "area_congest_lvl": "약간 붐빔",
         "area_congest_msg": "사람들이 몰려있을 가능성이 크고 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.",
-        "area_ppltn_min": "175000",
-        "area_ppltn_max": "180000",
+        "area_ppltn_min": "160000",
+        "area_ppltn_max": "165000",
         "warn_val": "강풍",
         "warn_stress": "주의보",
         "announce_time": "202411261150",

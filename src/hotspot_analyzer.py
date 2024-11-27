@@ -20,6 +20,7 @@ class HotspotAnalyzer:
 
         # JSON 형식 데이터 생성
         result_data = {
+            "푸시 알림 내용": f"{self.hotspot}에 {self.safety_cate_name}가 발생했습니다. 안전에 유의하세요",
             "혼잡도정보": info1,
             "재난반경": info2,
             "행동요령": info3
