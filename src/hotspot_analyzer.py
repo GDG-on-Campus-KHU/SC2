@@ -28,9 +28,10 @@ class HotspotAnalyzer:
 
         #print(result_data)
 
-        # JSON 파일로 저장
-        with open(self.output_path, "w", encoding="utf-8") as file:
-            json.dump(result_data, file, ensure_ascii=False, indent=4)
+        # # JSON 파일로 저장
+        # with open(self.output_path, "w", encoding="utf-8") as file:
+        #     json.dump(result_data, file, ensure_ascii=False, indent=4)
 
-        print(f"결과가 {self.output_path}에 저장되었습니다.")
+        # print(f"결과가 {self.output_path}에 저장되었습니다.")
+        return result_data
 
