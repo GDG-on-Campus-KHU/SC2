@@ -1,0 +1,79 @@
+WARNING [11/28 16:25:52 d2.evaluation.coco_evaluation]: COCO Evaluator instantiated using config, this is deprecated behavior. Please pass in explicit arguments instead.
+WARNING [11/28 16:25:52 d2.data.datasets.coco]: 
+Category ids in annotations are not in [1, #categories]! We'll apply a mapping for you.
+
+[11/28 16:25:52 d2.data.datasets.coco]: Loaded 93 images in COCO format from /content/drive/MyDrive/Dataset/dataset/GDSC_Sprint_Challenge/dataset/test/test_coco.json
+[11/28 16:25:52 d2.data.dataset_mapper]: [DatasetMapper] Augmentations used in inference: [ResizeShortestEdge(short_edge_length=(800, 800), max_size=1333, sample_style='choice')]
+[11/28 16:25:52 d2.data.common]: Serializing the dataset using: <class 'detectron2.data.common._TorchSerializedList'>
+[11/28 16:25:52 d2.data.common]: Serializing 93 elements to byte tensors and concatenating them all ...
+[11/28 16:25:52 d2.data.common]: Serialized dataset takes 0.38 MiB
+[11/28 16:25:52 d2.evaluation.evaluator]: Start inference on 93 batches
+/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataloader.py:617: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+[11/28 16:25:56 d2.evaluation.evaluator]: Inference done 11/93. Dataloading: 0.0090 s/iter. Inference: 0.1421 s/iter. Eval: 0.0404 s/iter. Total: 0.1915 s/iter. ETA=0:00:15
+[11/28 16:26:01 d2.evaluation.evaluator]: Inference done 46/93. Dataloading: 0.0049 s/iter. Inference: 0.1255 s/iter. Eval: 0.0211 s/iter. Total: 0.1517 s/iter. ETA=0:00:07
+[11/28 16:26:06 d2.evaluation.evaluator]: Inference done 84/93. Dataloading: 0.0042 s/iter. Inference: 0.1197 s/iter. Eval: 0.0180 s/iter. Total: 0.1421 s/iter. ETA=0:00:01
+[11/28 16:26:07 d2.evaluation.evaluator]: Total inference time: 0:00:12.504153 (0.142093 s / iter per device, on 1 devices)
+[11/28 16:26:07 d2.evaluation.evaluator]: Total inference pure compute time: 0:00:10 (0.119094 s / iter per device, on 1 devices)
+[11/28 16:26:07 d2.evaluation.coco_evaluation]: Preparing results for COCO format ...
+[11/28 16:26:07 d2.evaluation.coco_evaluation]: Saving results to ./output/coco_instances_results.json
+[11/28 16:26:07 d2.evaluation.coco_evaluation]: Evaluating predictions with unofficial COCO API...
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+[11/28 16:26:07 d2.evaluation.fast_eval_api]: Evaluate annotation type *bbox*
+[11/28 16:26:07 d2.evaluation.fast_eval_api]: COCOeval_opt.evaluate() finished in 0.03 seconds.
+[11/28 16:26:07 d2.evaluation.fast_eval_api]: Accumulating evaluation results...
+[11/28 16:26:07 d2.evaluation.fast_eval_api]: COCOeval_opt.accumulate() finished in 0.01 seconds.
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.230
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.343
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.253
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.083
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.236
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.211
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.332
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.332
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.080
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.340
+[11/28 16:26:07 d2.evaluation.coco_evaluation]: Evaluation results for bbox: 
+|   AP   |  AP50  |  AP75  |  APs  |  APm  |  APl   |
+|:------:|:------:|:------:|:-----:|:-----:|:------:|
+| 23.021 | 34.334 | 25.281 |  nan  | 8.317 | 23.599 |
+[11/28 16:26:07 d2.evaluation.coco_evaluation]: Some metrics cannot be computed and is shown as NaN.
+[11/28 16:26:07 d2.evaluation.coco_evaluation]: Per-category bbox AP: 
+| category              | AP    | category                                  | AP     |
+|:----------------------|:------|:------------------------------------------|:-------|
+| heavy rain_car_level2 | 0.000 | heavy rain_heavy rain damaged area_level2 | 46.043 |
+Loading and preparing results...
+DONE (t=0.02s)
+creating index...
+index created!
+[11/28 16:26:07 d2.evaluation.fast_eval_api]: Evaluate annotation type *segm*
+[11/28 16:26:07 d2.evaluation.fast_eval_api]: COCOeval_opt.evaluate() finished in 0.14 seconds.
+[11/28 16:26:07 d2.evaluation.fast_eval_api]: Accumulating evaluation results...
+[11/28 16:26:07 d2.evaluation.fast_eval_api]: COCOeval_opt.accumulate() finished in 0.01 seconds.
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.230
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.355
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.269
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.062
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.236
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.205
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.318
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.318
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.060
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.327
+[11/28 16:26:07 d2.evaluation.coco_evaluation]: Evaluation results for segm: 
+|   AP   |  AP50  |  AP75  |  APs  |  APm  |  APl   |
+|:------:|:------:|:------:|:-----:|:-----:|:------:|
+| 22.983 | 35.523 | 26.936 |  nan  | 6.238 | 23.622 |
+[11/28 16:26:07 d2.evaluation.coco_evaluation]: Some metrics cannot be computed and is shown as NaN.
+[11/28 16:26:07 d2.evaluation.coco_evaluation]: Per-category segm AP: 
+| category              | AP    | category                                  | AP     |
+|:----------------------|:------|:------------------------------------------|:-------|
+| heavy rain_car_level2 | 0.000 | heavy rain_heavy rain damaged area_level2 | 45.966 |
+Evaluation Results: OrderedDict([('bbox', {'AP': 23.02147082938203, 'AP50': 34.33373646085005, 'AP75': 25.28064563968521, 'APs': nan, 'APm': 8.316831683168317, 'APl': 23.599442298770633, 'AP-heavy rain_car_level2': 0.0, 'AP-heavy rain_heavy rain damaged area_level2': 46.04294165876406}), ('segm', {'AP': 22.98300720128134, 'AP50': 35.52270682591535, 'AP75': 26.936170194230446, 'APs': nan, 'APm': 6.237623762376238, 'APl': 23.622039484559934, 'AP-heavy rain_car_level2': 0.0, 'AP-heavy rain_heavy rain damaged area_level2': 45.96601440256268})]))

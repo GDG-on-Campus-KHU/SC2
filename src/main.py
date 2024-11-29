@@ -12,7 +12,7 @@ def analyze_and_merge(hotspot, clientspot, safety_cate_name, image_path, output_
     hotspot_results = analyzer.analyze()
 
     # 2. Detectron2 결과 얻기 
-    #detectron2_results = run_detectron2(image_path)
+    #detectron2_results = run_detectron2(image_path, output_path)
 
     combined_results = {
         "hotspot_results": hotspot_results,
