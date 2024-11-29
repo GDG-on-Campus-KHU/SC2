@@ -5,12 +5,11 @@ from distance import get_distance_between_to_address
 from behaviour_tips import get_behaviour_tips
 
 class HotspotAnalyzer:
-    def __init__(self, hotspot, clientspot, safety_cate_name, output_path):
+    def __init__(self, hotspot, clientspot, safety_cate_name):
         # 데이터 로드 및 초기화
         self.hotspot = hotspot
         self.clientspot = clientspot
         self.safety_cate_name = safety_cate_name
-        self.output_path = output_path
 
     def analyze(self):
         # 정보를 가져오고 출력하는 메서드
@@ -22,16 +21,9 @@ class HotspotAnalyzer:
         result_data = {
             "push_alarming": f"{self.hotspot}에 {self.safety_cate_name}가 발생했습니다. 안전에 유의하세요", #알람 정보
             "congestion": info1, #혼잡도 정보
-            "disaster_radius": info2,  #재난발생지역, 사용자 거리
+            "disaster_radius": info2,  #재난발생지역과 사용자 간의 거리
             "action_plan": info3 #행동요령
         }
 
-        #print(result_data)
-
-        # # JSON 파일로 저장
-        # with open(self.output_path, "w", encoding="utf-8") as file:
-        #     json.dump(result_data, file, ensure_ascii=False, indent=4)
-
-        # print(f"결과가 {self.output_path}에 저장되었습니다.")
         return result_data
 
