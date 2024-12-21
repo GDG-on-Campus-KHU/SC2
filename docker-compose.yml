@@ -1,0 +1,17 @@
+services:
+  detectron2-app:
+    image: jihye3535/sc2-detectron2-app  # Docker Hub에서 가져올 이미지 이름을 명시하거나 빌드된 로컬 이미지 이름을 사용
+    container_name: detectron2-app
+    ports:
+      - "5000:5000"  # 컨테이너의 5000번 포트를 호스트의 5000번 포트로 매핑
+    volumes:
+      - ./model:/app/model  # 로컬 모델 폴더를 컨테이너 내부의 /app/model에 매핑
+      - ./.env:/app/.env    # .env 파일을 컨테이너 내부로 복사
+    #environment:
+      #- FLASK_ENV=development  # 환경 변수 설정 (선택 사항)
+    networks:
+      - detectron2-network
+
+networks:
+  detectron2-network:
+    driver: bridge  # 기본 브리지 네트워크 사용

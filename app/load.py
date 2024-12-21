@@ -6,7 +6,7 @@ def load_env_variable(key, default_value=None):
     """
     .env 파일에서 환경 변수를 로드하고 해당 키의 값을 반환합니다.
     """
-    load_dotenv()
+    load_dotenv('/app/.env')
     value = os.getenv(key, default_value)
     if not value:
         raise EnvironmentError(f"환경 변수 '{key}'가 설정되지 않았습니다.")

@@ -37,8 +37,8 @@ def run_detectron2(image_path):
     
     num_classes = 3
 
-    config_file = "/Users/kimjihe/Desktop/detectron2/configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml"
-    model_path = "/Users/kimjihe/Desktop/model_final.pth"
+    config_file = "/app/detectron2/configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml"
+    model_path = "/app/model/model_final.pth"
     
     cfg = get_cfg()
     cfg.MODEL.DEVICE = "cpu"

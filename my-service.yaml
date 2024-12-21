@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: detectron2-service
+spec:
+  selector:
+    app: detectron2-app
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5000

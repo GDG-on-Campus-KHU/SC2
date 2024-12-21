@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: detectron2-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: detectron2-app
+  template:
+    metadata:
+      labels:
+        app: detectron2-app
+    spec:
+      containers:
+      - name: detectron2-container
+        image: jihye3535/sc2-detectron2-app
+        ports:
+        - containerPort: 5000

@@ -1,8 +1,6 @@
 from flask import Flask, request, jsonify
 from hotspot_analyzer import HotspotAnalyzer
 from detectron import run_detectron2
-import os
-import json
 import cv2
 
 app = Flask(__name__)
@@ -26,7 +24,7 @@ def analyze_and_merge(hotspot, clientspot, safety_cate_name, image_path):
 @app.route('/analyze', methods=['POST'])
 def analyze():
     data=request.json
-    image_path="/Users/kimjihe/Desktop/SC2/src/images/flood_begium.jpg"
+    image_path="/app/app/images/flood_kangnam.jpg"
     im = cv2.imread(image_path)
     hotspot=data.get("hotspot", "경복궁")
     clientspot=data.get("clientspot", "서울역")
@@ -45,4 +43,4 @@ def analyze():
     
 
 if __name__ == "__main__":
-    app.run(debug=True, host='127.0.0.1', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5000)
